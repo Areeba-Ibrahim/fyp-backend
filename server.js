@@ -16,6 +16,7 @@ app.use(express.json());
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/projects', require('./routes/projectRoutes'));
 app.use('/api/requests', require('./routes/requestRoutes'));
+app.use('/api/files', require('./routes/fileRoutes'));
 
 // Test Route
 app.get('/', (req, res) => {
