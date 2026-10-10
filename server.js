@@ -12,11 +12,15 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+// Routes
+app.use('/api/auth', require('./routes/authRoutes'));
+
 // Test Route
 app.get('/', (req, res) => {
   res.send('FYP Management System Backend API is running...');
 });
 
+// Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
