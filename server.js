@@ -12,11 +12,15 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+// Serve uploaded files statically
+app.use('/uploads', express.static('uploads'));
+
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/projects', require('./routes/projectRoutes'));
 app.use('/api/requests', require('./routes/requestRoutes'));
 app.use('/api/files', require('./routes/fileRoutes'));
+app.use('/api/admin', require('./routes/adminRoutes'));
 
 // Test Route
 app.get('/', (req, res) => {
